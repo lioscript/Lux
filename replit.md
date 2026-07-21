@@ -60,6 +60,49 @@ A premium Telegram third-party verification service — a bot + Mini App that le
 - `/adm` is completely silent to non-admins (no error reply), to avoid revealing the command exists.
 - After deploying, set `WEBAPP_URL` secret to the production domain so the Mini App button points to the live URL instead of the dev domain.
 
+## Railway Deployment
+
+The project deploys as **two separate Railway services** from this monorepo.
+
+### Service 1 — API Server (bot + REST API)
+
+| Setting | Value |
+|---------|-------|
+| Root Directory | `artifacts/api-server` |
+| Build Command | *(from railway.toml — auto-detected)* |
+| Start Command | `node dist/index.mjs` |
+| Health Check | `/api/healthz` |
+
+**Required env vars in Railway dashboard:**
+
+| Variable | Value |
+|----------|-------|
+| `BOT_TOKEN` | Telegram bot token from @BotFather |
+| `ADMIN_ID` | Numeric Telegram user ID of the admin |
+| `WEBAPP_URL` | Full URL of the Mini App service (set after deploying Service 2) |
+
+### Service 2 — Lux Mini App (static frontend)
+
+| Setting | Value |
+|---------|-------|
+| Root Directory | `artifacts/lux-miniapp` |
+| Build Command | *(from railway.toml — auto-detected)* |
+| Start Command | `npx serve dist/public -l $PORT --single` |
+
+No secrets required for this service — it is a purely static Telegram Mini App.
+
+### Deployment order
+
+1. Deploy **Mini App** service first → copy its Railway-assigned public URL.
+2. Set `WEBAPP_URL` env var on the **API Server** service to that URL.
+3. In @BotFather → *Edit Bot → Edit Menu Button* → set the URL to the same Mini App URL.
+4. Register the bot with @VerifyBot to obtain the blue checkmark (required for verification API calls to succeed).
+
+### Config files
+
+- `artifacts/api-server/railway.toml` — API Server Railway config
+- `artifacts/lux-miniapp/railway.toml` — Mini App Railway config
+
 ## User preferences
 
 - Language: Admin UI in Ukrainian, /start message in English.

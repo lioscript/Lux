@@ -1,0 +1,19 @@
+# Railway configuration for the Lux Verification API Server + Telegram Bot
+# Service root directory: artifacts/api-server
+#
+# Required environment variables (set in Railway dashboard):
+#   BOT_TOKEN   — Telegram bot token from @BotFather
+#   ADMIN_ID    — Numeric Telegram user ID of the admin
+#   PORT        — Set automatically by Railway
+#   WEBAPP_URL  — Full URL of the deployed Mini App service (e.g. https://lux-miniapp.up.railway.app)
+
+[build]
+builder = "nixpacks"
+buildCommand = "cd ../.. && npm install -g pnpm@latest && pnpm install --frozen-lockfile && pnpm --filter @workspace/api-server run build"
+
+[deploy]
+startCommand = "node dist/index.mjs"
+healthcheckPath = "/api/healthz"
+healthcheckTimeout = 30
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3

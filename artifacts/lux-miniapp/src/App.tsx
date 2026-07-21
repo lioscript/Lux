@@ -159,7 +159,7 @@ export default function App() {
         </div>
 
         {/* ── Blue image section ── */}
-        <div className="flex-[0_0_46%] bg-gradient-to-b from-[#2AABEE] to-[#1a9ad6] flex items-center justify-center overflow-hidden">
+        <div className="flex-[0_0_46%] bg-[#22A7F0] flex items-center justify-center overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.img
               key={activeTab}

@@ -8,7 +8,6 @@
 #   WEBAPP_URL  — Full URL of the deployed Mini App service (e.g. https://lux-miniapp.up.railway.app)
 
 [build]
-builder = "nixpacks"
 buildCommand = "cd ../.. && npm install -g pnpm@latest && pnpm install --frozen-lockfile && pnpm --filter @workspace/api-server run build"
 
 [deploy]

@@ -8,7 +8,6 @@
 # Note: No secrets required — this is a static Telegram Mini App.
 
 [build]
-builder = "nixpacks"
 buildCommand = "cd ../.. && npm install -g pnpm@latest && pnpm install --frozen-lockfile && BASE_PATH=/ pnpm --filter @workspace/lux-miniapp run build"
 
 [deploy]

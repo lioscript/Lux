@@ -169,7 +169,7 @@ export default function App() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.97 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="h-full w-full object-contain translate-y-[60px] scale-[1.25]"
+              className="h-full w-full object-contain translate-y-[20px] scale-[1.25]"
               draggable={false}
             />
           </AnimatePresence>

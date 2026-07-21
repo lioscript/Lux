@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Lux Verification Mini App"
+version = "1.0.0"
+id = "artifacts/lux-miniapp"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22352
+
+[services.development]
+run = "pnpm --filter @workspace/lux-miniapp run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/lux-miniapp", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/lux-miniapp/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22352"
+BASE_PATH = "/"

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import imgPersonal from '@assets/7569FE8E-51CE-4088-A59D-5296F3B7DE45_1784626468740.jpeg';
-import imgChannel from '@assets/B1DD3475-4F7E-455A-BC25-B0A07364BEAD_1784626468740.jpeg';
-import imgBot from '@assets/15F19A2A-210D-44CF-AD54-5E9388039F2C_1784626468740.jpeg';
+import imgPersonal from '@assets/4269841B-8864-46C1-AA6D-32AE947E468A_1784634375287.png';
+import imgChannel from '@assets/99C00AB3-C020-4B82-BAE0-1ADDD6765E39_1784634375287.png';
+import imgBot from '@assets/49B40F2D-A70D-4761-9A63-3FD792FAAF93_1784634375287.png';
 import imgLogo from '@assets/5983DFB3-09D2-48F7-8EDC-A343596CF9F4_1784626560701.png';
 
 const ALL_IMAGES = [imgPersonal, imgChannel, imgBot];
@@ -169,7 +169,7 @@ export default function App() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.97 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="h-full w-full object-contain object-bottom"
+              className="h-full w-full object-contain object-top"
               draggable={false}
             />
           </AnimatePresence>

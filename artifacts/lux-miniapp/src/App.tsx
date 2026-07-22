@@ -31,11 +31,11 @@ const TABS: TabData[] = [
     title: 'Channel or Group Verification',
     subtitle: 'Verify your Telegram channel or group with an annual plan.',
     promo: 'Special limited-time price',
-    price: '$1,500',
+    price: '$499',
     originalPrice: '$2,500',
     period: '1 year',
     label2: 'Channel or group',
-    monthly: '$125 / month',
+    monthly: '$41.58 / month',
     image: imgChannel,
   },
   {
@@ -43,10 +43,10 @@ const TABS: TabData[] = [
     label: 'Personal',
     title: 'Personal Profile Verification',
     subtitle: 'Verify your Telegram personal profile with an annual plan.',
-    price: '$3,500',
+    price: '$888',
     period: '1 year',
     label2: 'Profile plan',
-    monthly: '$291.67 / month',
+    monthly: '$74 / month',
     image: imgPersonal,
   },
   {
@@ -54,10 +54,10 @@ const TABS: TabData[] = [
     label: 'Bot',
     title: 'Bot Verification',
     subtitle: 'Verify your Telegram bot with an annual plan.',
-    price: '$5,000',
+    price: '$1,500',
     period: '1 year',
     label2: 'Telegram bot',
-    monthly: '$416.67 / month',
+    monthly: '$125 / month',
     image: imgBot,
   },
 ];
@@ -176,7 +176,7 @@ export default function App() {
         </div>
 
         {/* ── White pricing card ── */}
-        <div className="flex-1 flex flex-col bg-white rounded-t-3xl -mt-4 relative z-10 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] overflow-hidden px-5 pt-5 pb-4">
+        <div className="flex-1 flex flex-col bg-white rounded-t-3xl -mt-[66px] relative z-10 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] overflow-hidden px-5 pt-5 pb-4">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}

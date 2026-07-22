@@ -169,7 +169,7 @@ export default function App() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.97 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className={`h-full w-full object-contain scale-[1.25] ${activeTab === 'personal' ? '-translate-y-[70px]' : '-translate-y-[50px]'}`}
+              className={`h-full w-full object-contain scale-[1.25] ${activeTab === 'personal' ? '-translate-y-[50px]' : '-translate-y-[30px]'}`}
               draggable={false}
             />
           </AnimatePresence>

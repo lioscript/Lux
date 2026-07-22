@@ -3,5 +3,3 @@ buildCommand = "npm install -g pnpm@10.26.1 && pnpm install --no-frozen-lockfile
 
 [deploy]
 startCommand = "node artifacts/api-server/dist/index.mjs"
-healthcheckPath = "/api/healthz"
-healthcheckTimeout = 300

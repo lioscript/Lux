@@ -87,7 +87,7 @@ The project deploys as **two separate Railway services** from this monorepo.
 |---------|-------|
 | Root Directory | `artifacts/lux-miniapp` |
 | Build Command | *(from railway.toml — auto-detected)* |
-| Start Command | `npx serve dist/public -l $PORT --single` |
+| Start Command | `node serve-static.mjs` |
 
 No secrets required for this service — it is a purely static Telegram Mini App.
 

@@ -200,6 +200,9 @@ export function startBot(): void {
     onStart: (info) => {
       logger.info({ username: info.username }, "Bot started polling");
     },
+  }).catch((err) => {
+    logger.error({ err }, "Bot polling failed — check BOT_TOKEN and network");
+    process.exit(1);
   });
 
   logger.info("Telegram bot initialized");

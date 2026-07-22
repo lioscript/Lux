@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import imgPersonal from '@assets/4269841B-8864-46C1-AA6D-32AE947E468A_1784634375287.png';
-import imgChannel from '@assets/99C00AB3-C020-4B82-BAE0-1ADDD6765E39_1784634375287.png';
-import imgBot from '@assets/49B40F2D-A70D-4761-9A63-3FD792FAAF93_1784634375287.png';
-import imgLogo from '@assets/5983DFB3-09D2-48F7-8EDC-A343596CF9F4_1784626560701.png';
+import imgPersonal from './assets/4269841B-8864-46C1-AA6D-32AE947E468A_1784634375287.png';
+import imgChannel from './assets/99C00AB3-C020-4B82-BAE0-1ADDD6765E39_1784634375287.png';
+import imgBot from './assets/49B40F2D-A70D-4761-9A63-3FD792FAAF93_1784634375287.png';
+import imgLogo from './assets/5983DFB3-09D2-48F7-8EDC-A343596CF9F4_1784626560701.png';
 
 const ALL_IMAGES = [imgPersonal, imgChannel, imgBot];
 

@@ -1,0 +1,41 @@
+pnpm install --no-frozen-lockfile && BASE_PATH=/ pnpm run build
+
+Lockfile is up to date, resolution step is skipped
+
+Already up to date
+
+
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: esbuild@0.28.1.                                     │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Done in 978ms using pnpm v10.26.1
+
+
+> @workspace/lux-miniapp@0.0.0 build /app
+> vite build --config vite.config.ts
+
+
+[36mvite v7.3.6 [32mbuilding client environment for production...[36m[39m
+
+transforming...
+
+[32m✓[39m 13 modules transformed.
+
+[31m✗[39m Build failed in 486ms
+
+[31merror during build:
+[31m[vite:asset] Could not load /attached_assets/4269841B-8864-46C1-AA6D-32AE947E468A_1784634375287.png (imported by src/App.tsx): ENOENT: no such file or directory, open '/attached_assets/4269841B-8864-46C1-AA6D-32AE947E468A_1784634375287.png'[31m
+    at async open (node:internal/fs/promises:639:25)
+    at async Object.readFile (node:internal/fs/promises:1252:14)
+    at async fileToBuiltUrl (file:///app/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0/node_modules/vite/dist/node/chunks/config.js:8793:18)
+    at async Object.handler (file:///app/node_modules/.pnpm/vite@7.3.6_@types+node@25.9.5_jiti@2.7.0_lightningcss@1.32.0/node_modules/vite/dist/node/chunks/config.js:8687:17)
+    at async PluginDriver.hookFirstAndGetPlugin (file:///app/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/es/shared/node-entry.js:22908:28)
+    at async file:///app/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/es/shared/node-entry.js:21894:33
+    at async Queue.work (file:///app/node_modules/.pnpm/rollup@4.62.2/node_modules/rollup/dist/es/shared/node-entry.js:23136:32)[39m
+
+ ELIFECYCLE  Command failed with exit code 1.

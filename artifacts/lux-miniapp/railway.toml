@@ -1,17 +1,5 @@
-# Railway configuration for the Lux Verification Mini App (static frontend)
-# Service root directory: artifacts/lux-miniapp
-#
-# Environment variables:
-#   PORT     — Set automatically by Railway
-#   BASE_PATH — Optional, defaults to '/' (correct for Railway root deployment)
-#
-# Note: No secrets required — this is a static Telegram Mini App.
-
 [build]
-buildCommand = "cd ../.. && npm install -g pnpm@latest && pnpm install --frozen-lockfile && BASE_PATH=/ pnpm --filter @workspace/lux-miniapp run build"
+buildCommand = "cd ../.. && npm install -g pnpm@10.26.1 && pnpm install --no-frozen-lockfile && BASE_PATH=/ pnpm --filter @workspace/lux-miniapp run build"
 
 [deploy]
-startCommand = "npx serve dist/public -l $PORT --single"
-healthcheckTimeout = 30
-restartPolicyType = "on_failure"
-restartPolicyMaxRetries = 3
+startCommand = "node artifacts/lux-miniapp/serve-static.mjs"

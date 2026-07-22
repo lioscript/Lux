@@ -1,5 +1,5 @@
 {
   "deploy": {
-    "startCommand": "npx serve dist/public -l $PORT --single"
+    "startCommand": "node serve-static.mjs"
   }
 }

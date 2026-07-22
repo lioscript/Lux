@@ -1,5 +1,5 @@
 [build]
-buildCommand = "cd ../.. && npm install -g pnpm@10.26.1 && pnpm install --no-frozen-lockfile && BASE_PATH=/ pnpm --filter @workspace/lux-miniapp run build"
+buildCommand = "npm install -g pnpm@10.26.1 && pnpm --dir ../.. install --no-frozen-lockfile && BASE_PATH=/ pnpm --dir ../.. --filter @workspace/lux-miniapp run build"
 
 [deploy]
 startCommand = "node serve-static.mjs"
